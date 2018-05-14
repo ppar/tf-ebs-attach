@@ -1,0 +1,8 @@
+package: github.com/ppar/tf-ebs-attach
+import:
+- package: github.com/docopt/docopt-go
+  version: ee0de3bc6815ee19d4a46c7eb90f829db0e014b1
+- package: github.com/hashicorp/terraform
+  version: ~0.11.7
+  subpackages:
+  - helper/hashcode

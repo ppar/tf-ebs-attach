@@ -1,0 +1,10 @@
+hash: dd3c625b4e11dd148bb58ee5e3a7d1f1a4b614c4abe45845fa8746c788e0ef27
+updated: 2018-05-14T03:18:50.495596101+02:00
+imports:
+- name: github.com/docopt/docopt-go
+  version: ee0de3bc6815ee19d4a46c7eb90f829db0e014b1
+- name: github.com/hashicorp/terraform
+  version: 41e50bd32a8825a84535e353c3674af8ce799161
+  subpackages:
+  - helper/hashcode
+testImports: []
