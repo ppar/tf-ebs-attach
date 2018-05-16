@@ -2,9 +2,11 @@
 # tf-ebs-attach
 
 This tool lets you "import" an AWS EBS volume attachment into your Terraform 
-state file. While Terraform lets you import AWS instances and EBS volumes, it 
-does not support importing the synthetic "aws_volume_attachment" resource that 
-has no identifiable counterpart in AWS.  
+state file. 
+
+While Terraform lets you import AWS instances and EBS volumes, it  doesn't 
+seem to support importing the synthetic "aws_volume_attachment" resource that 
+has no identifiable counterpart in AWS, so this hack provides a workaround.  
 
 ## Usage
 ```
@@ -46,6 +48,12 @@ To get a useful diff, normalize with jq:
 ## Acknowledgements
 
 https://github.com/foxsy/tfvolattid/
+
+## Context
+- https://www.terraform.io/docs/providers/aws/d/instance.html
+- https://www.terraform.io/docs/providers/aws/r/ebs_volume.html
+- https://www.terraform.io/docs/providers/aws/r/volume_attachment.html
+- https://github.com/hashicorp/terraform/pull/11060/commits/ef0ebfa7516537b53e4b706e0b7f526659cffde2
 
 ## Compilation
 

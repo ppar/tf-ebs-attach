@@ -1,4 +1,4 @@
-hash: dd3c625b4e11dd148bb58ee5e3a7d1f1a4b614c4abe45845fa8746c788e0ef27
+hash: 7c6dbbd49311695a3c3bdc6de338f1ea42cc7ab192ecc3484c2ae806b41f5185
 updated: 2018-05-14T03:18:50.495596101+02:00
 imports:
 - name: github.com/docopt/docopt-go
@@ -7,4 +7,13 @@ imports:
   version: 41e50bd32a8825a84535e353c3674af8ce799161
   subpackages:
   - helper/hashcode
+- name: github.com/yudai/gojsondiff
+  version: d53dddaf16b9f5b19737f4722943e7e1f289af13
+- name: github.com/sergi/go-diff
+  version: 1744e2970ca51c86172c8190fadad617561ed6e7
+  subpackages:
+  - diffmatchpatch
+- name: github.com/yudai/golcs
+- name: github.com/mattn/go-isatty
+  version: 0360b2af4f38e8d38c7fce2a9f4e702702d73a39
 testImports: []

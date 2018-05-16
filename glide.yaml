@@ -6,3 +6,12 @@ import:
   version: ~0.11.7
   subpackages:
   - helper/hashcode
+- package: github.com/yudai/gojsondiff
+  version: ~1.0.0
+- package: github.com/sergi/go-diff
+  version: ~1.0.0
+  subpackages:
+  - diffmatchpatch
+- package: github.com/yudai/golcs
+- package: github.com/mattn/go-isatty
+  version: ~0.0.3

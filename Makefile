@@ -1,16 +1,30 @@
 TARGET=tf-ebs-attach
+.PHONY: all $(TARGET) $(TARGET).linux-amd64 clean glide-lock-hash
 
-# Always compile a new binary
-.PHONY: all $(TARGET) clean
+# Always compile a new binary, do "glide install" iff ./vendor is missing
+all: vendor $(TARGET).mac $(TARGET).linux-amd64
 
-all: vendor $(TARGET)
+$(TARGET).linux-amd64:
+	GOOS=linux GOARGH=amd64 go build -o $(TARGET).linux-amd64
 
-$(TARGET):
-	go build
+$(TARGET).mac:
+	GOOS=darwin GOARGH=amd64 go build -o $(TARGET).mac
 
+clean:
+	rm $(TARGET).linux-amd64 $(TARGET).mac
+	rm -rf vendor
+
+# Install vendored dependencies. This should pull exactly 3 (three) packages:
+# $ find  vendor/github.com -mindepth 2 -maxdepth 2
+# vendor/github.com/docopt/docopt-go
+# vendor/github.com/hashicorp/terraform
+# vendor/github.com/mattn/go-isatty
+# vendor/github.com/sergi/go-diff
+# vendor/github.com/yudai/gojsondiff
+# vendor/github.com/yudai/golcs
 vendor:
 	glide install
 
-clean:
-	rm $(TARGET)
-	rm -rf vendor
+# Fool glide by generating a new hash from glide.yaml
+glide-lock-hash:
+	sed -i ''  "s/^hash: .*/hash: $$(LC_ALL=C shasum -a256 glide.yaml | awk '{print $$1}')/" glide.lock
