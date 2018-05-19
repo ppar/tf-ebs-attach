@@ -16,7 +16,7 @@ import (
 
 //       1         2         3         4         5         6         7         8
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
-const usage = `terraform-ebs-attachment
+const usage = `terraform-ebs-attach
 
 Usage:
   tf-ebs-attach import [-i f] [-o f] <inst-name> <vol-name> <att-name> <dev>  
@@ -55,11 +55,8 @@ Modes:
 
 Examples:
   tf-ebs-attach import mysrv mysrv_dsk0 mysrv_dsk0_attch /dev/sdg
+  tf-ebs-attach diff -i foo.state  mysrv mysrv_dsk0 mysrv_dsk0_attch /dev/sdg
   tf-ebs-attach show i-abc123 mysrv_dsk0 vol-123abc mysrv_dsk0_att /dev/sdg
-  
-To get a useful diff, normalize with jq:
-  jq -S . < terraform.tfstate > old.tmp 
-  tf-ebs-attach import -i old.tmp -o - [...] | jq -S . | diff -u old.tmp -
 `
 
 func main() {

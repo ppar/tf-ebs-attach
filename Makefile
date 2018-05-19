@@ -11,7 +11,7 @@ $(TARGET).mac:
 	GOOS=darwin GOARGH=amd64 go build -o $(TARGET).mac
 
 clean:
-	rm $(TARGET).linux-amd64 $(TARGET).mac
+	for f in $(TARGET).linux-amd64 $(TARGET).mac vendor/.DS_Store ]; do [ -e "$$f" ] && rm "$$f" ; done ; true
 	rm -rf vendor
 
 # Install vendored dependencies. This should pull exactly 3 (three) packages:
