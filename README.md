@@ -44,6 +44,15 @@ Examples:
   tf-ebs-attach show i-abc123 mysrv_dsk0 vol-123abc mysrv_dsk0_att /dev/sdg
 ```
 
+## Binaries
+- https://github.com/ppar/tf-ebs-attach/releases/download/v0.1/tf-ebs-attach.linux-amd64.bz2
+- https://github.com/ppar/tf-ebs-attach/releases/download/v0.1/tf-ebs-attach.mac.bz2
+
+```
+35294a1b20e994b2475c44777cb6c12f tf-ebs-attach.linux-amd64
+ad4d712657f3c83875fa57bacc568bab tf-ebs-attach.mac
+```
+
 ## Acknowledgements
 
 https://github.com/foxsy/tfvolattid/
